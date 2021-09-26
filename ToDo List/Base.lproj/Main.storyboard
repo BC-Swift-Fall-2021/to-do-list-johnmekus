@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cnJ-0d-w0x" kind="show" identifier="showDetail" id="K5X-9s-3gc"/>
+                                            <segue destination="cnJ-0d-w0x" kind="show" identifier="ShowDetail" id="K5X-9s-3gc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -44,13 +44,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jOX-8K-JIw">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="QzM-4t-ROD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9mw-kt-dpZ">
                             <connections>
-                                <segue destination="2US-WV-k30" kind="presentation" identifier="addDetail" id="h4d-9g-nhc"/>
+                                <segue destination="2US-WV-k30" kind="presentation" identifier="AddDetail" id="h4d-9g-nhc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="9mw-kt-dpZ" id="7Ou-RE-XVZ"/>
                         <outlet property="tableView" destination="vfB-Ef-9BN" id="bJY-aj-EP4"/>
                     </connections>
                 </viewController>
@@ -63,7 +65,7 @@
             <objects>
                 <tableViewController id="cnJ-0d-w0x" customClass="ToDoDetailTableViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0AK-PD-T6r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -77,7 +79,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGd-qs-iM6">
-                                                    <rect key="frame" x="20" y="5" width="374" height="34"/>
+                                                    <rect key="frame" x="19" y="5" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -143,6 +145,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="g98-kh-El3">
                             <connections>
                                 <action selector="saveBarButton:" destination="cnJ-0d-w0x" id="wyN-1G-Lg5"/>
+                                <segue destination="D3S-h6-ew6" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="ADi-fG-bqP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,9 +153,11 @@
                         <outlet property="datePicker" destination="yc3-sl-9nj" id="HNZ-9a-MkD"/>
                         <outlet property="nameField" destination="GGd-qs-iM6" id="Trb-uh-9ZF"/>
                         <outlet property="noteView" destination="pMj-VA-Bi6" id="rNX-3W-XLM"/>
+                        <outlet property="saveBarButton" destination="g98-kh-El3" id="0vm-Kw-3z9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUw-kc-GXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="D3S-h6-ew6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2736" y="98"/>
         </scene>
@@ -195,7 +200,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K5X-9s-3gc"/>
+        <segue reference="5De-xP-Ph7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
