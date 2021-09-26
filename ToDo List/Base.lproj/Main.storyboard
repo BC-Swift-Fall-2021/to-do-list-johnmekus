@@ -44,7 +44,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jOX-8K-JIw">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="QzM-4t-ROD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="QzM-4t-ROD">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="BYZ-38-t0r" id="j11-zl-8lB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9mw-kt-dpZ">
                             <connections>
                                 <segue destination="2US-WV-k30" kind="presentation" identifier="AddDetail" id="h4d-9g-nhc"/>
@@ -52,7 +56,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addBarButton" destination="9mw-kt-dpZ" id="7Ou-RE-XVZ"/>
+                        <outlet property="addBarButton" destination="9mw-kt-dpZ" id="YNt-KY-3TC"/>
                         <outlet property="tableView" destination="vfB-Ef-9BN" id="bJY-aj-EP4"/>
                     </connections>
                 </viewController>
@@ -65,7 +69,7 @@
             <objects>
                 <tableViewController id="cnJ-0d-w0x" customClass="ToDoDetailTableViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0AK-PD-T6r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -200,7 +204,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5De-xP-Ph7"/>
+        <segue reference="K5X-9s-3gc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
